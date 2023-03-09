@@ -1,0 +1,8 @@
+<h2>Bookmark movie into
+  <%= @list.name.capitalize %></h2>
+
+<%= simple_form_for(@list) do |f| %>
+  <%= f.select :movies, @movies.map { |movie| movie.title } %>
+  <%= f.text_field :comment %>
+  <%= f.submit %>
+<% end %>

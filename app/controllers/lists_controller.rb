@@ -1,8 +1,6 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: %i[show]
-  # list index
-  # show list
-  # new list
+  before_action :set_list, only: %i[show edit update]
+
   # bookmark movie in list
 
   def index
@@ -30,6 +28,7 @@ class ListsController < ApplicationController
 
   def set_list
     @list = List.find(params[:id])
+    @movies = Movie.all
   end
 
   def list_params
