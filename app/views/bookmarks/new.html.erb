@@ -2,7 +2,7 @@
   <%= @list.name.capitalize %></h2>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.select :movie, @movies.map { |movie| movie.title } %>
+  <%= f.association :movie %>
   <%= f.text_field :comment %>
   <%= f.submit %>
 <% end %>
