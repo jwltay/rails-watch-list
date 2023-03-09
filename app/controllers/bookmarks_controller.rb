@@ -1,8 +1,7 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark_and_list
+  before_action :set_bookmark_and_list, only: %i[new create]
 
-  def new
-  end
+  def new; end
 
   def create
     @movie = Movie.find(bookmark_params[:movie_id])
@@ -12,6 +11,13 @@ class BookmarksController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    @list = List.find(params[:list_id])
+    redirect_to list_path(@list)
   end
 
   private
