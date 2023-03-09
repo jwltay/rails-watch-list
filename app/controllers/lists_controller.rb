@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_action :set_list
   # list index
   # show list
   # new list
@@ -6,5 +7,14 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+  end
+
+  def show
+  end
+
+  private
+
+  def set_list
+    @list = List.find(params[:id])
   end
 end
