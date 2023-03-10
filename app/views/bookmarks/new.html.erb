@@ -1,8 +1,10 @@
-<h2>Bookmark movie into
-  <%= @list.name.capitalize %></h2>
+<div class="container">
+  <h2>Bookmark movie into
+    <%= @list.name.capitalize %></h2>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.text_field :comment %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie %>
+    <%= f.input :comment %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>
