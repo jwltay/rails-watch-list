@@ -1,4 +1,4 @@
-<%= render "shared/banner", object: { title: @list.name, caption: "", image: "https://images.unsplash.com/photo-1546074177-5bf66250f769?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" } %>
+<%= render "shared/banner", object: { title: @list.name, caption: "", image: (cl_image_path @list.photo.key) } %>
 
 <div class="container">
   <div class="d-flex flex-row-reverse py-3">
