@@ -1,6 +1,6 @@
 <%= render "shared/banner", object: { title: @list.name, caption: "", image: (cl_image_path @list.photo.key) } %>
 
-<div class="content-container container-sm">
+<div class="container container-sm">
   <div class="d-flex flex-row-reverse py-3">
     <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-success text-white" %>
   </div>
@@ -8,7 +8,7 @@
   <ul class="list-unstyled">
     <div class="row">
       <% @list.bookmarks.each do |bookmark| %>
-        <div class="col col-lg-6">
+        <div class="col col-12 col-md-6">
           <div class="card-trip my-2">
             <img src="<%= bookmark.movie.poster_url %>" class="d-flex justify-content-center"/>
             <div class="card-trip-infos">
