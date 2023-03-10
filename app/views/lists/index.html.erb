@@ -9,7 +9,7 @@
   <ul class="list-unstyled">
     <div class="cards">
       <% @lists.each do |list| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.movies.first.poster_url %>)">
           <li><%= link_to list.name, list_path(list), class: "text-decoration-none text-white" %></li>
         </div>
       <% end %>
